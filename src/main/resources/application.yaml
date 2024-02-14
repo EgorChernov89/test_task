@@ -1,0 +1,31 @@
+server:
+  port: 8096
+
+spring:
+  #Sql
+  datasource:
+    url: jdbc:postgresql://localhost:5432/db_param
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  #Hibernate
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  #MVC
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+#Log
+logging:
+  level:
+    root: "info"
+    org.springframework.web: "debug"
+    org.hibernate: "error"
+
+token:
+  signing:
+    key: "MegaLargeSigningSecretKeyForDemoApplicationMegaLargeSigningSecretKeyForDemoApplication"
+
